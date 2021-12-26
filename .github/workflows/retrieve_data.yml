@@ -2,7 +2,7 @@ name: Retriever
 
 on:
   schedule:
-    - cron: "0 * * * *" # cf. https://crontab.guru/examples.html
+    - cron: "0 2 * * *" # cf. https://crontab.guru/examples.html
   workflow_dispatch:
 
 env:
