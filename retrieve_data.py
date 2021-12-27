@@ -25,7 +25,8 @@ response = requests.get("https://data.mobility.brussels/bike/api/counts/?request
 #print (response.text)
 ####v# print("Size of the response: ", len(data['records']))
 data = response
-with open(f'{FOLDER_PATH}/{filename}', 'w', newline="") as file:
-    csvwriter = csv.writer(file) # 2. create a csvwriter object
-#    csvwriter.writerow(header) # 4. write the header
-    csvwriter.writerows(data) # 5. write the rest of the data
+with open(f'{filename}', 'w',newline='') as file:
+#    csvwriter = csv.writer(file) # 2. create a csvwriter object
+#    csvwriter.writerows(response.text) 
+#    csvwriter.writerows(data) # 5. write the rest of the data
+     file.write(response.text)
