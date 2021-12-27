@@ -24,6 +24,6 @@ response = requests.get("https://data.mobility.brussels/bike/api/counts/?request
 #print (response.headers)
 #print (response.text)
 ####v# print("Size of the response: ", len(data['records']))
-data = response.content()
+data = response
 with open(f'{FOLDER_PATH}/{filename}', 'w') as output:
-    resp.content(data, output)
+    (data, output)
