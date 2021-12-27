@@ -23,4 +23,4 @@ response = requests.get(URL)
 data = response.json()
 # print("Size of the response: ", len(data['records']))
 with open(f'{FOLDER_PATH}/{filename}', 'w') as output:
-    json.dump(data["records"], output)
+    json.dump(data, output)
