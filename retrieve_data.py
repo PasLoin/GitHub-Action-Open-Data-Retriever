@@ -6,7 +6,6 @@ import os
 import csv
 import json
 import time
-from StringIO import StringIO
 
 # Format the name of the output file
 FMT = "%Y-%m-%d-%H-%M"
