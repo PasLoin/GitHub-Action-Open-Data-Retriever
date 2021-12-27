@@ -20,8 +20,9 @@ filename = f'history_{time.strftime(FMT)}.csv'
 URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=csv"
 response.encoding = 'utf-8' # Optional: requests infers this internally
 response = requests.get(URL)
+response.headers['content-type']
 print(f"{'Successful' if response.status_code == 200 else 'Unsuccessful'} call to the API") 
-data = response.text
+print (response.headers)
 # print("Size of the response: ", len(data['records']))
 with open(f'{FOLDER_PATH}/{filename}', 'w') as output:
-    text.csv(data, output)
+    text.csv(response, output)
