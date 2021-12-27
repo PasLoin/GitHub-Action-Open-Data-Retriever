@@ -3,9 +3,8 @@
 import requests
 from datetime import datetime
 import os
-# import csv
-import json
-# import time
+import csv
+
 
 # Format the name of the output file
 FMT = "%Y-%m-%d-%H-%M"
@@ -15,12 +14,19 @@ filename = f'history_{time.strftime(FMT)}.json'
 
 # Following link to understand the API functionnalities
 # cf. https://data.mobility.brussels/bike/api/counts/
-# nrows=-1 means we will retrieve all the stations
-# https://data.mobility.brussels/bike/api/counts/
-URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=json"
-response = requests.get(URL)
-# print(f"{'Successful' if response.status_code == 200 else 'Unsuccessful'} call to the API") 
-data = response.json()
-# print("Size of the response: ", len(data['records']))
-with open(f'{FOLDER_PATH}/{filename}', 'w') as output:
-    json.dump(data, output)
+# 
+response = requests.get("https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=csv")
+# URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=csv"
+# response.encoding = 'utf-8' # Optional: requests infers this internally
+# response = requests.get(URL)
+#response.headers['content-type']
+#print(f"{'Successful' if response.status_code == 200 else 'Unsuccessful'} call to the API") 
+#print (response.headers)
+#print (response.text)
+####v# print("Size of the response: ", len(data['records']))
+data = response
+with open(f'{FOLDER_PATH}/{filename}', 'w',newline='') as file:
+#    csvwriter = csv.writer(file) # 2. create a csvwriter object
+#    csvwriter.writerows(response.text) 
+#    csvwriter.writerows(data) # 5. write the rest of the data
+     file.write(response.text)
