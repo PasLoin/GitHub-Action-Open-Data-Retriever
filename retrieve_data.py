@@ -15,7 +15,7 @@ filename = f'history_{time.strftime(FMT)}.json'
 # cf. https://data.mobility.brussels/bike/api/counts/
 # nrows=-1 means we will retrieve all the stations
 # https://data.mobility.brussels/bike/api/counts/
-URL = "https://opendata.bruxelles.be/api/records/1.0/search/?dataset=aires-de-stationnements-taxi&q=&facet=voirie"
+URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=202212310&outputFormat=csv"
 response = requests.get(URL)
 # print(f"{'Successful' if response.status_code == 200 else 'Unsuccessful'} call to the API") 
 data = response.json()
