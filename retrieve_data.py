@@ -23,6 +23,8 @@ response = requests.get(URL)
 response.headers['content-type']
 print(f"{'Successful' if response.status_code == 200 else 'Unsuccessful'} call to the API") 
 print (response.headers)
+print (response.text)
+response = response.text
 # print("Size of the response: ", len(data['records']))
 with open(f'{FOLDER_PATH}/{filename}', 'w') as output:
     text.csv(response, output)
