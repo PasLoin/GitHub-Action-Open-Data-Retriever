@@ -3,8 +3,8 @@
 import requests
 from datetime import datetime
 import os
-# import csv
-import json
+import csv
+# import json
 # import time
 
 # Format the name of the output file
@@ -17,10 +17,10 @@ filename = f'history_{time.strftime(FMT)}.csv'
 # cf. https://data.mobility.brussels/bike/api/counts/
 # nrows=-1 means we will retrieve all the stations
 # https://data.mobility.brussels/bike/api/counts/
-URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=json"
+URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=csv"
 response = requests.get(URL)
 # print(f"{'Successful' if response.status_code == 200 else 'Unsuccessful'} call to the API") 
-data = response.json()
+data = response.csv()
 # print("Size of the response: ", len(data['records']))
 with open(f'{FOLDER_PATH}/{filename}', 'w') as output:
-    json.dump(data, output)
+    json.csv(data, output)
