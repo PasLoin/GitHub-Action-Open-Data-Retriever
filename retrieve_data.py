@@ -15,7 +15,7 @@ filename = f'history_{time.strftime(FMT)}.txt'
 # Following link to understand the API functionnalities
 # cf. https://data.mobility.brussels/bike/api/counts/
 # 
-response = requests.get("https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211227&endDate=20221231&outputFormat=csv")
+response = requests.get("https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211225&endDate=20221231&outputFormat=csv")
 # URL = "https://data.mobility.brussels/bike/api/counts/?request=history&featureID=CJM90&startDate=20211201&endDate=20221231&outputFormat=csv"
 # response.encoding = 'utf-8' # Optional: requests infers this internally
 # response = requests.get(URL)
