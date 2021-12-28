@@ -10,7 +10,7 @@ import csv
 FMT = "%Y-%m-%d-%H-%M"
 FOLDER_PATH = "./history"
 time = datetime.now()
-filename = f'history_{time.strftime(FMT)}.csv'
+filename = f'history_{time.strftime(FMT)}.txt'
 
 # Following link to understand the API functionnalities
 # cf. https://data.mobility.brussels/bike/api/counts/
